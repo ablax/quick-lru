@@ -1,4 +1,4 @@
-# quick-lru [![Coverage Status](https://codecov.io/gh/sindresorhus/quick-lru/branch/main/graph/badge.svg)](https://codecov.io/gh/sindresorhus/quick-lru/branch/main)
+# quick-lru [![Build Status](https://travis-ci.org/sindresorhus/quick-lru.svg?branch=master)](https://travis-ci.org/sindresorhus/quick-lru) [![Coverage Status](https://coveralls.io/repos/github/sindresorhus/quick-lru/badge.svg?branch=master)](https://coveralls.io/github/sindresorhus/quick-lru?branch=master)
 
 > Simple [“Least Recently Used” (LRU) cache](https://en.m.wikipedia.org/wiki/Cache_replacement_policies#Least_Recently_Used_.28LRU.29)
 
@@ -15,7 +15,7 @@ $ npm install quick-lru
 ## Usage
 
 ```js
-import QuickLRU from 'quick-lru';
+const QuickLRU = require('quick-lru');
 
 const lru = new QuickLRU({maxSize: 1000});
 
@@ -68,7 +68,7 @@ Useful for side effects or for items like object URLs that need explicit cleanup
 
 ### Instance
 
-The instance is an [`Iterable`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Iteration_protocols) of `[key, value]` pairs so you can use it directly in a [`for…of`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/for...of) loop.
+The instance is [`iterable`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Iteration_protocols) so you can use it directly in a [`for…of`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/for...of) loop.
 
 Both `key` and `value` can be of any type.
 
@@ -125,10 +125,6 @@ Iterable for all entries, starting with the newest (descending in recency).
 #### .size
 
 The stored item count.
-
-## Related
-
-- [yocto-queue](https://github.com/sindresorhus/yocto-queue) - Tiny queue data structure
 
 ---
 
